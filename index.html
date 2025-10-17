@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 스포츠 직관 마스터</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Malgun Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+
+        .game-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .game-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 3px solid transparent;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-color: #667eea;
+        }
+
+        .game-card.recommended {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+        }
+
+        .badge {
+            background: #e74c3c;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .game-icon {
+            font-size: 4em;
+            margin-bottom: 15px;
+        }
+
+        .game-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #2d3436;
+            margin-bottom: 10px;
+        }
+
+        .game-desc {
+            color: #636e72;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            background: rgba(255,255,255,0.7);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .features li {
+            list-style: none;
+            padding: 5px 0;
+            color: #495057;
+            font-size: 0.9em;
+        }
+
+        .features li::before {
+            content: '✓ ';
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            margin: 5px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .instructions {
+            background: #e3f2fd;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border-left: 5px solid #2196f3;
+        }
+
+        .instructions h3 {
+            color: #1976d2;
+            margin-bottom: 15px;
+        }
+
+        .instructions p {
+            color: #495057;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .game-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 스포츠 직관 마스터</h1>
+        <p class="subtitle">청소년을 위한 보드게임 - 경기장으로 떠나는 여행!</p>
+
+        <div class="game-cards">
+            <!-- 싱글플레이어 -->
+            <div class="game-card">
+                <div class="game-icon">🎮</div>
+                <div class="game-title">싱글플레이어</div>
+                <p class="game-desc">혼자서 연습하거나 학습하고 싶을 때</p>
+                
+                <div class="features">
+                    <ul>
+                        <li>혼자서 플레이</li>
+                        <li>자신의 페이스로</li>
+                        <li>퀴즈 학습 효과</li>
+                        <li>가볍게 즐기기</li>
+                    </ul>
+                </div>
+
+                <a href="single.html" class="btn">
+                    ▶️ 게임 시작
+                </a>
+            </div>
+
+            <!-- 멀티플레이어 -->
+            <div class="game-card recommended">
+                <span class="badge">⭐ 추천!</span>
+                <div class="game-icon">👥</div>
+                <div class="game-title">멀티플레이어</div>
+                <p class="game-desc">친구들과 함께 경쟁하며 즐기기!</p>
+                
+                <div class="features">
+                    <ul>
+                        <li>최대 4명 동시 플레이</li>
+                        <li>턴제 시스템</li>
+                        <li>순위 경쟁 (1~4등)</li>
+                        <li>커스터마이징</li>
+                    </ul>
+                </div>
+
+                <a href="multi.html" class="btn">
+                    ▶️ 게임 시작
+                </a>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>📖 게임 방법</h3>
+            <p>
+                <strong>▶️ 게임 시작:</strong> 위의 버튼을 클릭하면 새 창에서 게임이 시작됩니다.<br><br>
+                <strong>🎲 플레이 방법:</strong> 주사위를 굴려 25칸 보드를 이동하며 골인을 목표로 합니다.<br><br>
+                <strong>❓ 퀴즈:</strong> 팀, 종목, 매너 관련 퀴즈를 풀며 보너스를 획득하세요!
+            </p>
+        </div>
+    </div>
+</body>
+</html>
